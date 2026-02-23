@@ -1,33 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>LTBHost</title>
-    <style>
-        body, html { margin:0; height:100%; background:black; }
-        #screen_container { width:100%; height:100vh; }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LTBHost - Modern Landing Page</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Add a link to styles if needed -->
 </head>
 <body>
-    <div id="screen_container"></div>
-
-    <script type="module">
-        import { V86Starter } from 'https://cdn.skypack.dev/v86';
-
-        new V86Starter({
-            screen_container: document.getElementById("screen_container"),
-            wasm_fn: async (importObject) => {
-                const wasmModule = await WebAssembly.instantiateStreaming(
-                    fetch('https://cdn.skypack.dev/v86/build/v86.wasm'),
-                    importObject
-                );
-                return wasmModule.instance.exports;
-            },
-            bios: { url: "bios/seabios.bin" },
-            vga_bios: { url: "bios/vgabios.bin" },
-            hda: { url: "sanos-hda.img" },
-            autostart: true,
-        });
-    </script>
+    <header>
+        <h1>Welcome to LTBHost</h1>
+        <p>Your one-stop solution for booting systems effortlessly.</p>
+    </header>
+    <main>
+        <section>
+            <h2>About LTBHost</h2>
+            <p>LTBHost is designed to help you manage and boot systems with ease. With a user-friendly interface and robust backend, we provide the tools you need for efficient system management.</p>
+        </section>
+        <section>
+            <h2>Get Started</h2>
+            <ul>
+                <li><a href="boot-linux.html">Boot Linux</a></li>
+                <li><a href="boot-windows.html">Boot Windows</a></li>
+                <li><a href="boot-macos.html">Boot macOS</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>© 2026 LTBHost. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
